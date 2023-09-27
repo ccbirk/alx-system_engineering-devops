@@ -1,0 +1,1 @@
+This is a shell basics tutorial using the shell bash, focusing on scripting. 
