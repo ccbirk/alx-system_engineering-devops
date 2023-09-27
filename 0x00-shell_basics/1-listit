@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a -1
+echo ls -a -1
