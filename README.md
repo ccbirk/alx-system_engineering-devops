@@ -1,1 +1,2 @@
-This is a shell basics tutorial using the shell bash, focusing on scripting. 
+//0x01. Shell, permissions
+/ Tasks are based on shell permissions
