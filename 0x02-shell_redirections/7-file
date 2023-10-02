@@ -1,2 +1,2 @@
 #!/bin/bash 
-echo "Best School\n" > \*\\'"Best School"\'\\*$\?\*\*\*\*\*:)
+printf -v filename '*"Best School"\'*$\?\*\*\*\*\*:)' | touch "$filename" | echo "Best School" >> "$filename"
