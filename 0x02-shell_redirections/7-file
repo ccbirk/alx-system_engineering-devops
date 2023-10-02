@@ -1,2 +1,2 @@
 #!/bin/bash 
-printf -v filename '*"Best School"\'*$\?\*\*\*\*\*:)' | echo "Best School" > "$filename"
+echo "Best School" > \*\\'"Best School"\'\\*$\?\*\*\*\*\*:)
