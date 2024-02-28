@@ -1,0 +1,4 @@
+#!/usr/bin/evn bash 
+#using ss -ltpan because of wider compatibility than netstat
+
+ss -ltpan | awk '{print $4 ":" $5, $7}'
