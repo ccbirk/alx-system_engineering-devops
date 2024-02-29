@@ -1,4 +1,7 @@
 #!/usr/bin/env bash 
-#using ss -ltpan because of wider compatibility than netstat
-
-ss -ltpan | awk '{print $4 ":" $5, $7}'
+# Use ss command for wider compatibility
+# Use -lpn options:
+#  -l: display listening sockets
+#  -p: show the process ID (PID) of the network connections
+#  -n: do not resolve addresses (faster)
+ss -lpn | awk '{print $4, $5, $6}' | xargs -I {} ps -o pid,command {}
