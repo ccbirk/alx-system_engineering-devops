@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Run a specified cmd as another user(provided in arg)
+usr="$1"
+sudo -u "$usr" whoami
+
