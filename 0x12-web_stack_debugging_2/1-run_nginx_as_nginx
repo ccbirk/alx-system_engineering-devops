@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# Func to stop Nginx services
+stop_nginx() {
+    sudo service nginx stop
+}
+
+# Set Nginx conf
+set_nginx() {
+    str='s/(listen (\[::\]:)?80) /\180 /'
+    sudo sed -i 's/#user www-data/user nginx/' /etc/nginx/nginx.conf
+    sudo sed -Ei "$str" /etc/nginx/sites-enabled/default
+    sudo sed -Ei "$str" /etc/nginx/sites-available/default
+}
+
+# Permissions changer
+perm_changer() {
+    sudo chmod 644 /etc/nginx/nginx.conf
+}
+
+# Stop apache services
+terminate_apache() {
+    if pgrep apache2; then
+        pkill apache2
+    fi
+}
+
+# Func to restart Nginx services
+nginx_starter() {
+    sudo -u nginx service nginx start
+}
+
+# Call functions
+main() {
+	stop_nginx
+	set_nginx
+	perm_changer
+	terminate_apache
+	nginx_starter
+}
+
+# Exec main
+main
+
