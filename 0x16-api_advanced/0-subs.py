@@ -5,8 +5,6 @@
     the function should return 0
 """
 import requests
-
-
 def number_of_subscribers(subreddit):
     """ Return number of subscribers """
     res = requests.get(f"https://www.reddit.com/r/{subreddit}/about.json",
